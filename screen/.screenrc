@@ -1,0 +1,16 @@
+# GNU screen configuration file
+
+# escape key
+escape ^T
+
+# scroll
+defscrollback 1000
+
+# don't show startup message.
+startup_message off
+
+# bell
+vbell on
+
+# key binding
+

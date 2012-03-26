@@ -1,0 +1,8 @@
+.emacs.d/auto-save-list
+.emacs.d/history
+.emacs.d/var/*
+
+# local.el is local setting file
+.emacs.d/config/local.el
+
+
