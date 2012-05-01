@@ -1,9 +1,6 @@
 ;;; org-init.el
 
 (when (require 'org-install nil t)
-  (setq org-startup-truncated nil)
-  (setq org-return-follows-link t)
-  
   (add-to-list 'auto-mode-alist '(".org$" . org-mode))
   ;; キー設定
   (add-hook 'org-mode-hook
@@ -13,11 +10,19 @@
                (local-set-key "\C-cb" 'org-iswitchb)
                ))
 
+  ;; 基本ディレクトリ
+  (setq org-directory "~/org/gtd")
+  (setq org-default-notes-file (concat org-directory "agenda.org"))
+
+  ;; 打ち切らない.
+  (setq org-startup-truncated nil)
+  ;; link を return で追う
+  (setq org-retrun-follows-link t)
+
   ;; DONE にしたときの日時を記録する
   (setq org-log-done t)
   (org-remember-insinuate)
-  (setq org-directory "~/org/gtd")
-  (setq org-default-notes-file (concat org-directory "agenda.org"))
+
 
   ;; agenda 関連の設定
   ;; http://d.hatena.ne.jp/tamura70/20100208/org
@@ -68,14 +73,43 @@
           ("Meeting" ?m "** %? %t" nil "打合せ")
           ))
 
+  ;; 大文字で補完(github)
+  ;;http://www.gfd-dennou.org/member/uwabami/cc-env/Emacs/init-org.html
+  (add-to-list 'org-structure-template-alist
+               '("s" "#+BEGIN_SRC ?\n\n#+END_SRC"
+                 "<src lang=\"?\">\n\n</src>"))
+
+
   ;; 公開設定
+
+  ;; default の style sheet は使わない
+  (setq org-export-html-style-include-default nil)
+
+  ;; HTMLエクスポートでコードハイライト用 CSS を分離
+  ;; CSS は M-x org-export-htmlize-generate-css で作成可能
+  (setq org-export-htmlize-output-type 'css)
+
+  ;; cache の置き場所を ~/.emacs.d/tmp/org-timestamps/ に変える
+  (setq org-publish-timestamp-directory
+        (convert-standard-filename (concat user-emacs-directory "var/org-timestamps/")))
+
+  ;; project の設定
   (setq org-publish-project-alist
         '(("memo"
            :base-directory "~/org/memo/"
            :publishing-directory "~/org/public_html"
            :section-numbers nil
            :table-of-contents nil
+           :language ja
+           :author-info nil
+           :email-info nil
+           :creator-info nil
+           :auto-sitemap t
+           :sitemap-filename "sitemap.org"
+           :sitemap-title "sitemap"
+           :style "<link rel=\"stylesheet\" href=\"./css/common.css\" type=\"text/css\"/>
+           <link rel=\"stylesheet\" href=\"./css/face.css\" type=\"text/css\"/>"
            )))
-  
+
 
   )
