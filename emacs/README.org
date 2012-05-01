@@ -1,9 +1,46 @@
-* Emacs設定ファイル
-** はじめに
-*** フォルダ構成
-** 設定ファイル
-*** init.el
-*** config/packages.el
+* Shin's Emacs Configuration
+** Install
+** Description
+*** Contents
+[[http://www.clear-code.com/blog/2011/2/16.html][ココ]]を参考にして以下のようなフォルダ構成にしている。
+# tree の結果
+#+begin_example
+.
+├── .emacs.d
+│   ├── config
+│   │   ├── builtins.el    ← 標準elispの設定
+│   │   ├── local.el       ← 環境に依存する設定(バージョン管理外)
+│   │   ├── packages
+│   │   │   └── init-*.el ← 非標準elisp設定の細かい設定
+│   │   └── packages.el    ← 非標準elisp設定
+│   ├── elisp    ← 非標準elispの置き場
+│   ├── init.el  ← 基本的な設定
+│   └── var      ← 一時ファイルの置き場(バージョン管理外)
+├── .gitignore
+└── README.org    ← このファイル
+#+end_example
 
+非標準elispは次のものを使用している
+- anything
+- auto-complete
+- auto-install
+- calfw
+- color-theme
+- elscreen
+- gtags
+- lua-mode.el
+- migemo
+- cp5022x.el
+- cygwin-mount.el
+- dmacro.el
+- htmlize.el
+- japanese-holidays.el
+- mcomplete.el
+- minibuf-isearch.el
+- setup-cygwin.el
+- sr-speedbar.el
+- mozc.el
+- session
+- apel
 
 
