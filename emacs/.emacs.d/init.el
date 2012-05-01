@@ -302,7 +302,8 @@
 (when (require 'color-theme nil t)
   (color-theme-initialize)
   (when (require 'zenburn nil t)
-    (color-theme-zenburn)))
+    (color-theme-zenburn)
+    ))
 
 ;; スクロールバーを右側に
 (set-scroll-bar-mode 'right)                   
