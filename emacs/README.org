@@ -4,7 +4,7 @@
 *** Contents
 [[http://www.clear-code.com/blog/2011/2/16.html][ココ]]を参考にして以下のようなフォルダ構成にしている。
 # tree の結果
-#+begin_example
+#+BEGIN_SRC text
 .
 ├── .emacs.d
 │   ├── config
@@ -18,7 +18,9 @@
 │   └── var      ← 一時ファイルの置き場(バージョン管理外)
 ├── .gitignore
 └── README.org    ← このファイル
-#+end_example
+
+#+END_SRC
+
 
 非標準elispは次のものを使用している
 - anything
