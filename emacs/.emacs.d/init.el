@@ -69,6 +69,7 @@
                  '("~/.emacs.d"
                    "~/.emacs.d/site-elisp"
                    "~/.emacs.d/elisp"
+                   "~/.emacs.d/elisp/anything"
                    "~/.emacs.d/elisp/auto-complete"
                    "~/.emacs.d/elisp/auto-install"
                    "~/.emacs.d/elisp/calfw"
