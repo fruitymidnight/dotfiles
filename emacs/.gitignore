@@ -1,3 +1,7 @@
+#
+*.elc
+
+# emacs tmp file
 .emacs.d/auto-save-list
 .emacs.d/history
 .emacs.d/var/*
