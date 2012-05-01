@@ -1,24 +1,16 @@
-;;; c config file
-;;; =====================
-;;; CHANGE LOG
-;;; 2010/11/24 create.
-;;; 2011/04/20 
+;;; c-init.el
 
-;====================================
-; Cモードの設定
-;====================================
-(add-to-list 'load-path "~/.emacs.d/elisp/gtags/")
-(autoload 'gtags-mode "gtags" "" t)
-;(require 'gtags)
-(setq gtags-mode-hook
-      '(lambda ()
-         (local-set-key "\M-t" 'gtags-find-tag)
-         (local-set-key "\M-r" 'gtags-find-rtag)
-         (local-set-key "\M-s" 'gtags-find-symbol)
-         (local-set-key "\M-p" 'gtags-pop-stack)
-         (setq gtags-path-style 'relative)
-         ))
-
+(when (autoload-if-found 'gtags-mode "gtags" "" t)
+  (eval-after-load "gtags-mode"
+  '(progn
+     (setq gtags-mode-hook
+           '(lambda ()
+              (local-set-key "\M-t" 'gtags-find-tag)
+              (local-set-key "\M-r" 'gtags-find-rtag)
+              (local-set-key "\M-s" 'gtags-find-symbol)
+              (local-set-key "\M-p" 'gtags-pop-stack)
+              (setq gtags-path-style 'relative)
+              )))))
 
 (defun pew-c-mode-hook ()
     "C mode with adjusted defaults for use with the PEW Style."

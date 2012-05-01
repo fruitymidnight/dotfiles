@@ -91,7 +91,7 @@
 ;; ----------------------------------------------------------------------
 ;; @ grep
 
-(when nt-p
+(when windows-p
   ;; shell-quote-argumentの問題回避 
   (defvar quote-argument-for-windows-p t "enables `shell-quote-argument' workaround for windows.") 
   (defadvice shell-quote-argument (around shell-quote-argument-for-win activate) 

@@ -1,29 +1,9 @@
-;====================================
-; Misc
-;====================================
+;;; misc-init.el
 
-;==================================
-;; mcomplete （anything で代替可）
-;==================================
-;(require 'mcomplete)
-;(turn-on-mcomplete-mode)
+;; ----------------------------------------------------------------------
+;; @ session.el
+;;   kill-ringやミニバッファで過去に開いたファイルなどの履歴を保存する
 
-;====================================
-; minibuf-isearch
-;====================================
-;;   minibufでisearchを使えるようにする
-(require 'minibuf-isearch nil t)
-
-
-; isearch中でもC-gで問答無用にisearchを抜けて欲しい
-; http://blog.livedoor.jp/tek_nishi/archives/4866943.html
-(define-key isearch-mode-map "\C-g" 'isearch-cancel)
-
-
-;====================================
-; session.el
-;   kill-ringやミニバッファで過去に開いたファイルなどの履歴を保存する
-;====================================
 (setq load-path
       (cons (expand-file-name "~/.emacs.d/elisp/session/lisp/") load-path))
 (when (require 'session nil t)
@@ -40,10 +20,10 @@
   )
 
 
-;=============================
-; info
-;============================
-; infoファイルを置くディレクトリを設定する
+;; ----------------------------------------------------------------------
+;; @ info
+;;   infoファイルを置くディレクトリを設定する
+
 (setq Info-directory-list
       (append
     Info-default-directory-list
@@ -54,39 +34,22 @@
         )
     ))
 
-;============================
-; dmacro
-;============================
-; 繰り返し操作をおこなうことができる
+;; ----------------------------------------------------------------------
+;; @ dmacro
+;;   繰り返し操作をおこなうことができる
+
 (defconst *dmacro-key* [f7] "繰返し指定キー")
 (global-set-key *dmacro-key* 'dmacro-exec)
 (autoload 'dmacro-exec "dmacro" nil t)
 
-;============================
-; popwin.el
-;============================
-(require 'popwin)
-(setq display-buffer-function 'popwin:display-buffer)
+;; ----------------------------------------------------------------------
+;; @ sr-speedbar
+(when (autoload-if-found 'sr-speedbar "sr" "" t)
+  (eval-after-load "sr-speedbar"
+    '(progn
+       ;;(setq sr-speedbar-right-side nil);;左側に表示
+       (global-set-key (kbd "<f11>") 'sr-speedbar-toggle)
+       )))
 
-
-;============================
-; gtags.el
-;============================
-(autoload 'gtags-mode "gtags" "" t)
-(setq gtags-mode-hook
-      '(lambda ()
-         (local-set-key "\M-t" 'gtags-find-tag)
-         (local-set-key "\M-r" 'gtags-find-rtag)
-         (local-set-key "\M-s" 'gtags-find-symbol)
-         (local-set-key "\C-t" 'gtags-pop-stack)
-         ))
-
-
-;============================
-; sr-speedbar
-;============================
-(require 'sr-speedbar)
-;(setq sr-speedbar-right-side nil);;左側に表示
-(global-set-key (kbd "<f11>") 'sr-speedbar-toggle)
 
 

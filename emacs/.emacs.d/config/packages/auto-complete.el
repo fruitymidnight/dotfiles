@@ -1,14 +1,11 @@
-;====================================
-;; auto-complete
-;====================================
+;;; auto-complete-init.el
 
-; del: auto-complete の設定の変更（2010/08/30）
-;'(when (require 'auto-complete nil t)
-;   (global-auto-complete-mode t))
-(add-to-list 'load-path "~/.emacs.d/elisp/auto-complete/")
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/elisp/auto-complete/dict")
-(ac-config-default)
+(when (autoload-if-found 'auto-complete-config "auto-complete" nil t)
+  (eval-after-load "auto-complete-config"
+    '(progn
+       (add-to-list 'ac-dictionary-directories "~/.emacs.d/elisp/auto-complete/dict")
+       (ac-config-default)
 
-; 補完推測機能のデータを永続化するファイル名を指定
-(setq ac-comphist-file "~/.emacs.d/var/auto-complete/ac-comphist.dat")
+       ;; 補完推測機能のデータを永続化するファイル名を指定
+       (setq ac-comphist-file "~/.emacs.d/var/auto-complete/ac-comphist.dat")
+       )))
