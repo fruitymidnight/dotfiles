@@ -1,5 +1,53 @@
-* test
-** org-modeでREADME
-- リストA
-- リストB
+* 見出し１
+** 見出し２
+*** 見出し３
+** 文字の装飾
+*太字*
+/斜体/
+_下線付き_
++取り消し線+
+=コード=
+~等幅~
+** リンク
+[[http://google.com][Google]]
+
+** リスト
+*** 番号付きリスト
+1. List1
+2. List2
+3. List3
+*** 番号なしリスト
+形式１
++ List1
++ List2
++ List3
+
+形式２
+- List1
+- List2
+
+** テーブル
+| 題１ | 題２ |
+|------+------|
+| 値１ | 値２ | 
+
+** コメント
+行頭に"#"を付与する
+
+#+begin_comment
+これはコメントです
+#+end_comment
+
+** ソースコード
+#+begin_src c
+#include <stdio.h>
+int main (void)
+{
+  printf("Hello World¥n");
+  return 0;
+}
+
+#+end_src
+
+
 
