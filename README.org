@@ -9,6 +9,9 @@ _下線付き_
 =コード=
 ~等幅~
 ** リンク
+#+begin_example
+[[http://google.com][google]]
+#+end_example
 [[http://google.com][Google]]
 
 ** リスト
@@ -34,20 +37,19 @@ _下線付き_
 ** コメント
 行頭に"#"を付与する
 
-#+begin_comment
+#+BEGIN_COMMENT
 これはコメントです
-#+end_comment
+#+END_COMMENT
 
 ** ソースコード
-#+begin_src c
+#+BEGIN_SRC c
 #include <stdio.h>
 int main (void)
 {
   printf("Hello World¥n");
   return 0;
 }
-
-#+end_src
+#+END_SRC
 
 
 
