@@ -11,3 +11,8 @@
 ;(setq process-coding-system-alist '(("svn" . sjis)))
 
 (setq vc-dired-recurse nil)
+
+;; magit
+(when (require 'magit nil t)
+  ;; requireに成功場合
+  )

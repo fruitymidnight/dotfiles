@@ -44,5 +44,5 @@
 - mozc.el
 - session
 - apel
-
+- magit
 

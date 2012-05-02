@@ -83,6 +83,7 @@
                    "~/.emacs.d/elisp/session"
                    "~/.emacs.d/elisp/win-apel"
                    "~/.emacs.d/elisp/yasnippet"
+                   "~/.emacs.d/elisp/magit"
                    )
                  load-path))
 
