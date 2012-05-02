@@ -6,6 +6,9 @@
 .emacs.d/history
 .emacs.d/var/*
 
+# third party elisp
+.emacs.d/elisp/*
+
 # local.el is local setting file
 .emacs.d/config/local.el
 
