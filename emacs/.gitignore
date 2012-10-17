@@ -3,11 +3,13 @@
 
 # emacs tmp file
 .emacs.d/auto-save-list
+.emacs.d/tramp
 .emacs.d/history
 .emacs.d/var/*
 
 # third party elisp
 .emacs.d/elisp/*
+.emacs.d/el-get/*
 
 # local.el is local setting file
 .emacs.d/config/local.el
