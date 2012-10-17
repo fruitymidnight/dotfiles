@@ -1,6 +1,7 @@
-;;; anything-init.el 
+;;; init-anything.el 
 
-(when (require 'anything-startup nil t)
-  (define-key global-map  (kbd "C-l") 'anything)
-  )
+(unless (locate-library "anything")
+  (el-get 'sync 'anything))
+
+(define-key global-map  (kbd "C-l") 'anything)
 
