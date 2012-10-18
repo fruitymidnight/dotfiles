@@ -1,5 +1,8 @@
 ;;; c-init.el
 
+(unless (locate-library "gtags")
+  (el-get 'sync 'gtags))
+
 (when (autoload-if-found 'gtags-mode "gtags" "" t)
   (eval-after-load "gtags-mode"
   '(progn

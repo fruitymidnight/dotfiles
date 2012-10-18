@@ -1,5 +1,8 @@
 ;;; calfw-init.el
 
+(unless (locate-library "calfw")
+  (el-get 'sync 'calfw))
+
 
 (when (require 'calfw nil t) ; 初回一度だけ
   ;;(cfw:open-calendar-buffer) ; カレンダー表示
@@ -31,16 +34,15 @@
 ;;
 ;;   http://d.hatena.ne.jp/kiwanami/20110723/1311434175
 
+(unless (locate-library "japanese-holiday")
+  (el-get 'sync 'japanese-holiday))
+(eval-and-compile (require 'japanese-holidays))
+
 (add-hook 'calendar-load-hook
           (lambda ()
             ;; 祝日設定
             (when (require 'japanese-holidays nil t)
               (setq calendar-holidays
                     (append japanese-holidays local-holidays other-holidays))
-              ;; (setq calendar-weekend-marker 'diary)
-              ;; (add-hook 'today-visible-calendar-hook 'calendar-mark-weekend)
-              ;; (add-hook 'today-invisible-calendar-hook 'calendar-mark-weekend)
               )))
-
-
 

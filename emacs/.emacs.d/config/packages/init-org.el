@@ -1,4 +1,4 @@
-;;; org-init.el
+;;; init-org.el
 
 (when (require 'org-install nil t)
   (add-to-list 'auto-mode-alist '(".org$" . org-mode))
