@@ -5,19 +5,21 @@
 [[http://www.clear-code.com/blog/2011/2/16.html][ココ]]を参考にして以下のようなフォルダ構成にしている。
 # tree の結果
 #+BEGIN_SRC text
-.
 ├── .emacs.d
-│   ├── config
-│   │   ├── builtins.el    ← 標準elispの設定
-│   │   ├── local.el       ← 環境に依存する設定(バージョン管理外)
-│   │   ├── packages
-│   │   │   └── init-*.el ← 非標準elisp設定の細かい設定
-│   │   └── packages.el    ← 非標準elisp設定
-│   ├── elisp    ← 非標準elispの置き場
-│   ├── init.el  ← 基本的な設定
-│   └── var      ← 一時ファイルの置き場(バージョン管理外)
+│   ├── config              
+│   │   ├── builtins.el    ← 標準elispの設定
+│   │   ├── local.el       ← 環境に依存する設定(バージョン管理外)
+│   │   ├── el-get         ← el-get の設定（レシピなど）
+│   │   ├── packages       ← 非標準elispの設定
+│   │   └── packages.el    ← 標準elispの設定
+│   ├── el-get             ← el-getでインストールしたelispファイル
+│   ├── init.el            ← 基本的な設定
+│   └── var                ← 一時ファイル置き場
+│       ├── auto-complete
+│       ├── savehist
+│       └── session
 ├── .gitignore
-└── README.org    ← このファイル
+└── README.org             ← このファイル
 
 #+END_SRC
 
