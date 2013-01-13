@@ -118,10 +118,9 @@
 
 (when darwin-p
   ;; Input Method
-  (setq default-input-method "MacOSX")
+  (mac-input-method-mode t)
 
   ;; Google Japanese Input
-  (mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `title "漢")
   (mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `cursor-type `box)
   (mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `cursor-color "magenta")
 )
