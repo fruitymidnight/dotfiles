@@ -26,8 +26,21 @@
    (setq truncate-lines t)
 ;   (define-key c-mode-base-map [backspace] 'backward-delete-char)
 )
+
+(defun my-c-mode-hook ()
+    "C mode with adjusted defaults for use with the PEW Style."
+   (c-set-style "gnu")
+   (setq-default indent-tabs-mode t) ; インデントはTABでおこなう
+   (setq tab-width 4)
+   (setq c-basic-offset tab-width)
+   (linum-mode t)
+   (gtags-mode 1)
+   (setq truncate-lines t)
+   (define-key c-mode-base-map [backspace] 'backward-delete-char)
+)
+
 ;; C++ style
-(add-hook 'c-mode-hook 'pew-c-mode-hook)
+(add-hook 'c-mode-hook 'my-c-mode-hook)
 
 ;; flymake の設定
 ;; http://moimoitei.blogspot.com/2010/05/flymake-in-emacs.html
