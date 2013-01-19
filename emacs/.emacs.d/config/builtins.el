@@ -60,13 +60,9 @@
 ;; ----------------------------------------------------------------------
 ;; @ emacsclient
 
-(if (locate-library "server")
-    (progn
-;;      (setq server-auth-dir "~/.emacs.d/var/server/")
-      (load-library "server")
-      (server-start)
-      ))
-
+(require 'server)
+(unless (server-running-p)
+  (server-start))
 
 ;; ----------------------------------------------------------------------
 ;; @ whitespace
