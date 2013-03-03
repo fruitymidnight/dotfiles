@@ -33,3 +33,5 @@
 (load "config/packages/init-session")
 (load "config/packages/init-srspeedbar")
 (load "config/packages/init-dmacro")
+(load "config/packages/init-sdic")
+(load "config/packages/init-texttranslator")
