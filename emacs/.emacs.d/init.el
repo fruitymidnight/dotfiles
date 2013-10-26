@@ -512,17 +512,11 @@
 ;; スクロール時のカーソル位置の維持
 (setq scroll-preserve-screen-position t)
 
-;; スクロール行数（一行ごとのスクロール）
-(setq vertical-centering-font-regexp ".*")
-;;(setq scroll-conservatively 35)
-(setq scroll-conservatively 0)
-;;(setq scroll-margin 0)
-(setq scroll-margin 1)
-(setq scroll-step 1)
-
-;; 画面スクロール時の重複行数
-(setq next-screen-context-lines 1)
-
+;; scroll one line at a time (less "jumpy" than defaults)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq scroll-step 1) ;; keyboard scroll one line at a time
 
 ;; ----------------------------------------------------------------------
 ;; @ default setting
@@ -633,6 +627,7 @@
   ;; ファイルをドラッグオンドロップ時に開くようにする(デフォルトはinsert)
   (define-key global-map [ns-drag-file] 'ns-find-file)
   (setq ns-pop-up-frames nil)
+
 )
 
 ;; ----------------------------------------------------------------------
