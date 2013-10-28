@@ -6,6 +6,8 @@
 .emacs.d/tramp
 .emacs.d/history
 .emacs.d/var/*
+!.emacs.d/var/template
+!.emacs.d/var/snippets
 
 # third party elisp
 .emacs.d/elisp/*
