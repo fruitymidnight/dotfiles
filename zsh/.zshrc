@@ -111,6 +111,8 @@ alias du="du -h"
 alias df="df -h"
 
 alias su="su -l"
+alias emacs='XMODIFIERS=@im=none emacs'
+
 
 ## terminal configuration
 #

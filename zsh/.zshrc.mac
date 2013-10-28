@@ -2,24 +2,21 @@
 export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
 
-alias emacs=/usr/local/Cellar/emacs/23.3b/Emacs.app/Contents/MacOS/Emacs -nw
+#Path
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '(%s)-[%b|%a]'
-precmd() {
-  psvar=()
-  LANG=en_US.UTF-8 vcs_info
-  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
-RPROMPT="%1(v|%F{green}%1v%f|)"
+alias emacs="/usr/local/bin/emacs -nw"
+alias emacsclient="/usr/local/bin/emacsclient"
 
-#RVM setting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+alias e="emacsclient -n $* || open -a /Applications/Emacs.app $*"
+alias EDITOR="emacsclient -t"
 
 #python
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages/
 
-#byobu
-export BYOBU_PREFIX=`brew --prefix`
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
+# rake
+alias rake="noglob rake"
 
