@@ -47,7 +47,7 @@
 - text-translator
 - yasnippet
 
-
+ 
 **** 利用しなくなった非標準ELISP
 - apel
 - anything
