@@ -1,0 +1,4 @@
+(:name cp5022x
+       :description "Encoding"
+       :type http
+       :url "https://raw.github.com/awasira/cp5022x.el/master/cp5022x.el")
