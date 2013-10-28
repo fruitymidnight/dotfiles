@@ -40,7 +40,7 @@
   (set-function-coding-system shell-command 'utf-8 'cp932)
   (set-function-coding-system grep 'utf-8 'cp932)
   )
-q
+
 
 ;; ----------------------------------------------------------------------
 ;; @ ime
