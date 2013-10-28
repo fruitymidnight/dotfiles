@@ -1,36 +1,33 @@
-;;; c-init.el
+; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
+;;------------------------------------------------------------------------------
+;; @ C mode の設定
 
-(unless (locate-library "gtags")
-  (el-get 'sync 'gtags))
+(lazyload (gtags-mode) "gtags"
 
-(when (autoload-if-found 'gtags-mode "gtags" "" t)
-  (eval-after-load "gtags-mode"
-  '(progn
-     (setq gtags-mode-hook
-           '(lambda ()
-              (local-set-key "\M-t" 'gtags-find-tag)
-              (local-set-key "\M-r" 'gtags-find-rtag)
-              (local-set-key "\M-s" 'gtags-find-symbol)
-              (local-set-key "\M-p" 'gtags-pop-stack)
-              (setq gtags-path-style 'relative)
-              )))))
+    (define-key gtags-mode-map "\M-t" 'gtags-find-tag)
+    (define-key gtags-mode-map "\M-r" 'gtags-find-rtag)
+    (define-key gtags-mode-map "\M-s" 'gtags-find-symbol)
+    (define-key gtags-mode-map "\M-p" 'gtags-pop-stack)
+
+    (setq gtags-path-style 'relative)
+)
 
 (defun pew-c-mode-hook ()
-    "C mode with adjusted defaults for use with the PEW Style."
-   (c-set-style "gnu")
-;   (setq-default indent-tabs-mode t) ; インデントはTABでおこなう
-   (setq tab-width 4)
-   (setq c-basic-offset tab-width)
-   (linum-mode t)
-   (gtags-mode 1)
-   (setq truncate-lines t)
-;   (define-key c-mode-base-map [backspace] 'backward-delete-char)
-)
+  "C mode with adjusted defaults for use with the PEW Style."
+  (c-set-style "gnu")
+  ;; (setq-default indent-tabs-mode t) ; インデントはTABでおこなう
+  (setq tab-width 4)
+  (setq c-basic-offset tab-width)
+  (linum-mode t)
+  (gtags-mode 1)
+  (setq truncate-lines t)
+  ;; (define-key c-mode-base-map [backspace] 'backward-delete-char)
+  )
 
 (defun my-c-mode-hook ()
     "C mode with adjusted defaults for use with the PEW Style."
    (c-set-style "gnu")
-;   (setq-default indent-tabs-mode t) ; インデントはTABでおこなう
+   (setq-default indent-tabs-mode t) ; インデントはTABでおこなう
    (setq tab-width 4)
    (setq c-basic-offset tab-width)
    (linum-mode t)

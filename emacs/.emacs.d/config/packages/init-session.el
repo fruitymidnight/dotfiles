@@ -1,9 +1,7 @@
+; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
 ;; ----------------------------------------------------------------------
 ;; @ session.el
 ;;   kill-ringやミニバッファで過去に開いたファイルなどの履歴を保存する
-
-(unless (locate-library "session")
-  (el-get 'sync 'session))
 
 (when (require 'session nil t)
   (setq session-save-file "~/.emacs.d/var/session/.session")
@@ -16,5 +14,7 @@
   (add-hook 'after-init-hook 'session-initialize)
   ;; 前回閉じたときの位置にカーソルを復帰
   (setq session-undo-check -1)
+
+  (setq session-save-print-spec '(t nil 40000))
   )
 

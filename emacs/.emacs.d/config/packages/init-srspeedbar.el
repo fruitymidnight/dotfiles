@@ -1,6 +1,9 @@
-(unless (locate-library "sr-speedbar")
-  (el-get 'sync 'sr-speedbar))
+; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
+;; ----------------------------------------------------------------------
+;; @ srspeedbar
 
-(setq sr-speedbar-right-side nil)  ;;左側に表示
-(global-set-key (kbd "<f11>") 'sr-speedbar-toggle)
+(global-set-key (kbd "<f9>") 'sr-speedbar-toggle)
 
+(lazyload (sr-speedbar-toggle) "sr-speedbar"
+          (setq sr-speedbar-right-side nil)  ;;左側に表示
+          )

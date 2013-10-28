@@ -1,7 +1,6 @@
-;;; init-anything.el 
-
-(unless (locate-library "anything")
-  (el-get 'sync 'anything))
+; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
+;;------------------------------------------------------------------------------
+;; @ init-anything.el 
 
 (require 'anything-startup)
 (define-key global-map (kbd "C-l") 'anything)

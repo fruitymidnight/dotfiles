@@ -1,3 +1,4 @@
+; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
 ;;; calfw-init.el
 
 (unless (locate-library "calfw")
