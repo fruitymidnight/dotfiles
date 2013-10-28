@@ -19,7 +19,8 @@
   (push '("*Completions*") popwin:special-display-config)
   ;; auto-async-byte-compile
   (push '(" *auto-async-byte-compile*" :noselect t) popwin:special-display-config)
-  (push '(" *auto-async-byte-compile*" :height 14 :position bottom :noselect t) popwin:special-display-config)
+  ;; grep
+  (push '("*grep*" :noselect nil) popwin:special-display-config)
 
   ;; sdic-display-buffer 書き換え 
   (defadvice sdic-display-buffer (around sdic-display-buffer-normalize activate)
