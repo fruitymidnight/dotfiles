@@ -27,7 +27,7 @@
 (defun my-c-mode-hook ()
     "C mode with adjusted defaults for use with the PEW Style."
    (c-set-style "gnu")
-   (setq-default indent-tabs-mode t) ; インデントはTABでおこなう
+   ;; (setq-default indent-tabs-mode t) ; インデントはTABでおこなう
    (setq tab-width 4)
    (setq c-basic-offset tab-width)
    (linum-mode t)

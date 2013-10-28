@@ -180,10 +180,10 @@
 ;; @ modeline
 
 ;; 行番号の表示
-(line-number-mode t)
+;; (line-number-mode t)
 
 ;; 列番号の表示
-(column-number-mode t)
+;; (column-number-mode t)
 
 ;; 時刻の表示
 (require 'time)
@@ -192,7 +192,7 @@
 (display-time)
 
 ;; モードラインに関数名
-(which-function-mode 1)
+;; (which-function-mode 1)
 
 ;; cp932エンコード時の表示を「P」とする
 (coding-system-put 'cp932 :mnemonic ?P)

@@ -113,4 +113,5 @@
 (load "config/packages/init-tabbar" nil t)
 (load "config/packages/init-migemo" nil t)
 (load "config/packages/init-popwin" nil t)
+(load "config/packages/init-yasnippet" nil t)
 

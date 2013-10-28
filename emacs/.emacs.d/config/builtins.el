@@ -130,13 +130,17 @@
 
 ;; ----------------------------------------------------------------------
 ;; @ auto-insert
-(add-hook 'find-file-hooks 'auto-insert)
-(setq auto-insert-directory "~/lisp/insert/")
-(load "autoinsert")
-(setq auto-insert-alist
+
+(lazyload (auto-insert) "autoinsert"
+(setq auto-insert-directory "~/.emacs.d/var/insert/")
+  (setq auto-insert-alist
       (append '(
                 (yatex-mode . "latex-insert.tex")
                 ) auto-insert-alist))
+)
+(add-hook 'find-file-hooks 'auto-insert)
+
+
 
 ;; ----------------------------------------------------------------------
 ;; @ linum
