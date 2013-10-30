@@ -9,6 +9,7 @@
   (define-key global-map (kbd "M-y") 'helm-show-kill-ring)
   (define-key global-map (kbd "M-x") 'helm-M-x)
   (define-key global-map (kbd "C-M-o") 'helm-occur)
+  (define-key global-map (kbd "C-c i") 'helm-imenu)
 
   (when (require 'helm-migemo nil t)
     (setq helm-use-migemo t))
