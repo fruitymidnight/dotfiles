@@ -1,7 +1,7 @@
 #! /usr/bin/env zsh
 # -*- mode: sh ; coding: utf-8 -*-
 #Path
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+export PATH="/usr/texbin/:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 
 #python
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages/
