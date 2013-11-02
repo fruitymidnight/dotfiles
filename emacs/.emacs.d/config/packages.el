@@ -42,14 +42,14 @@
 ;; Packages to install from MELPA
 (defvar my/packages
   '(
+    auto-complete
+    popwin
     yasnippet
     helm
     helm-c-yasnippet
     helm-git
     helm-migemo
     helm-gtags
-    auto-complete
-    popwin
     magit
     markdown-mode
     lua-mode
@@ -85,6 +85,7 @@
     dmacro
     cp5022x
     setup-cygwin
+    yatex
     )
   "A list of packages to install from el-get at launch.")
 
@@ -114,4 +115,5 @@
 (load "config/packages/init-migemo" nil t)
 (load "config/packages/init-popwin" nil t)
 (load "config/packages/init-yasnippet" nil t)
+(load "config/packages/init-yatex" nil t)
 
