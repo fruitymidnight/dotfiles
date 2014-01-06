@@ -3,12 +3,12 @@
 ;; @ C mode の設定
 
 (lazyload (helm-gtags-mode) "helm-gtags"
-          
+
           ;; customize
-          (setq helm-gtags-path-style 'relative)
-          (setq helm-gtags-ignore-case t)
-          (setq helm-gtags-read-only t)
-          (setq helm-gtags-auto-update t)
+;;         (setq helm-gtags-path-style 'relative)
+         (setq helm-gtags-ignore-case t)
+         (setq helm-gtags-read-only t)
+         (setq helm-gtags-auto-update t)
 
           ;; key-binding
           (local-set-key (kbd "M-t") 'helm-gtags-find-tag)

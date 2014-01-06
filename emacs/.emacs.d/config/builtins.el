@@ -85,16 +85,20 @@
 (require 'whitespace)
 (global-whitespace-mode 1)
 (setq whitespace-style
-      '(tabs tab-mark spaces space-mark))
+      '(face tabs tab-mark spaces space-mark))
 (setq whitespace-space-regexp "\\(\x3000+\\)")
 (setq whitespace-display-mappings
       '((space-mark ?\x3000 [?\□])
-        (tab-mark   ?\t   [?\xBB ?\t])
+        ;; tabを文字で置き換えるとタブがずれるので無効化
+        ;; (tab-mark   ?\t   [?\xBB ?\t])
         ))
 (set-face-foreground 'whitespace-space "LightSlateGray")
-;(set-face-background 'whitespace-space "DarkSlateGray")
-(set-face-foreground 'whitespace-tab "LightSlateGray")
-;(set-face-background 'whitespace-tab "DarkSlateGray")
+;; タブのフェイス設定
+(set-face-attribute 'whitespace-tab nil
+                    :background "#2f373a"
+                    ;; :background "#2d3743"
+                    :strike-through nil
+                    :underline nil)
 
 
 ;; ----------------------------------------------------------------------

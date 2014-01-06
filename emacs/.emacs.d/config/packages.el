@@ -50,6 +50,7 @@
     helm-git
     helm-migemo
     helm-gtags
+    helm-ag
     magit
     markdown-mode
     lua-mode
@@ -57,7 +58,7 @@
 ;;    japanese-holidays
     session
     sr-speedbar
-    gtags
+;;    gtags
 ;;    elscreen
 ;;    elscreen-gf
 ;;    elscreen-dired
@@ -67,7 +68,8 @@
     auto-async-byte-compile
     tabbar
     color-moccur
-    cygwin-mount
+;;    cygwin-mount
+    git-gutter-fringe
     )
   "A list of packages to install from MELPA at launch.")
 
@@ -116,4 +118,5 @@
 (load "config/packages/init-popwin" nil t)
 (load "config/packages/init-yasnippet" nil t)
 (load "config/packages/init-yatex" nil t)
+(load "config/packages/init-git-gutter-fringe" nil t)
 

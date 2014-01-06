@@ -442,6 +442,8 @@
 (define-key global-map (kbd "M-C-g") 'grep)                  ; grep
 (define-key global-map (kbd "C-M-n") 'next-multiframe-window) ; 次のウィンドウへ移動
 (define-key global-map (kbd "C-M-p") 'previous-multiframe-window) ; 前のウィンドウへ移動
+(global-set-key "\C-a" 'beginning-of-visual-indented-line)
+(global-set-key "\C-e" 'end-of-visual-line)
 
 ;; ----------------------------------------------------------------------
 ;; @ mac setting
