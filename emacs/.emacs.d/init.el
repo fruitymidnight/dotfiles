@@ -459,6 +459,8 @@
   ;; ファイルをドラッグオンドロップ時に開くようにする(デフォルトはinsert)
   (define-key global-map [ns-drag-file] 'ns-find-file)
   (setq ns-pop-up-frames nil)
+
+  (x-focus-frame nil)
   )
 
 ;; ----------------------------------------------------------------------
