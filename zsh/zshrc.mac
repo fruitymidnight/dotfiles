@@ -6,7 +6,8 @@ export LC_ALL=ja_JP.UTF-8
 alias emacs="/usr/local/bin/emacs -nw"
 alias emacsclient="/usr/local/bin/emacsclient"
 
-alias e="emacsclient -n $* || open -a /Applications/Emacs.app $*"
+#alias e="emacsclient -n $* || open -a /Applications/Emacs.app $*"
+alias e="/usr/local/bin/emacsclient -n "$1" --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs &"
 alias EDITOR="emacsclient -t"
 
 alias rake="noglob rake"
