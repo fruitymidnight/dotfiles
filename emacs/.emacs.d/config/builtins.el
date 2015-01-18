@@ -182,7 +182,7 @@
 (eval-after-load 'linum
   '(progn
      ;; 行番号のフォーマット
-     (set-face-attribute 'linum nil  :foreground "white"  :height 0.8)
+     (set-face-attribute 'linum nil  :foreground "gray")
      (setq linum-format"%4d ")
      ))
 
