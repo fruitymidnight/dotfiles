@@ -10,7 +10,8 @@
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
   (add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/"))
   ;; インストールしたパッケージにロードパスを通してロードする
-  (package-initialize))
+  (package-initialize)
+)
 
 
 ;;------------------------------------------------------------------------------
@@ -75,7 +76,9 @@
 
 ;; Install Melpa packages
 (dolist (package my/packages)
-  (when (or (not (package-installed-p package)))
+  (unless (package-installed-p package)
+    ;; パッケージ情報の更新
+    (package-refresh-contents)
     (package-install package)))
 
 
