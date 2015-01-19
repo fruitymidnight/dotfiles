@@ -31,6 +31,17 @@
 ;; 言語環境を日本語にする
 (set-language-environment 'Japanese)
 
+;; MacではファイルシステムにHFSを利用しているため、濁点・半濁点の扱いがWindows、Linuxと異なる
+;; これを回避するために下記の設定を行う
+;; @see http://masutaka.net/chalow/2009-07-09-1.html
+(require 'ucs-normalize)
+(setq file-name-coding-system 'utf-8-hfs)
+(setq locale-coding-system 'utf-8-hfs)
+
+
+;; デフォルトの文字コードなどは
+;; set-language-environment を設定していれば不要
+
 ;; デフォルトの文字コード
 ;; (set-default-coding-systems 'utf-8-unix)
 
