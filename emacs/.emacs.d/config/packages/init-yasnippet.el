@@ -7,10 +7,12 @@
   (global-set-key (kbd "C-c y") 'helm-c-yas-complete)
   )
 
-(lazyload (helm-c-yas-complete) "yasnippet"
-          (yas-global-mode 1)
+(lazyload (helm-c-yas-complete) "yasnippet"          
           (setq yas-snippet-dirs
                 '(
-                  "~/.emacs.d/var/snippets"            ; personal snippets
+                  "~/.emacs.d/var/snippets"                         ; personal snippets
+                  "~/.emacs.d/elpa/yasnippet-20131031.628/snippets" ; default collection
                   ))
+          (yas-global-mode 1)
           )
+
