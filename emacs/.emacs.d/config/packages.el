@@ -48,7 +48,7 @@
     yasnippet
     helm
     helm-c-yasnippet
-    helm-git
+;;    helm-git
     helm-migemo
     helm-gtags
     helm-ag
