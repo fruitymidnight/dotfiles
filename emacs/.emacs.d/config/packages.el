@@ -1,5 +1,16 @@
 ; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
 ;;------------------------------------------------------------------------------
+
+;;;; package のアップデート方法
+;;;  - package.el でインストールしている package
+;;;    - 1. package-list-packagesを実行
+;;;    - 2. "U" "x" とする
+;;;  - el-get でインストールしている package
+;;;    - 1. M-x el-get-update-all
+;;;  - el-get 自体のアップデート
+;;;    - 1. M-x el-get-self-update
+
+
 ;; @ package.el の設定
 (when (require 'package nil t)
   ;; package.elでelispを入れるdirectoryの設定
@@ -14,8 +25,9 @@
 )
 
 
-;;------------------------------------------------------------------------------
-;; @ el-get.el の設定
+;; ------------------------------------------------------------------------------
+;;; el-get.el の設定
+;; ------------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
 (unless (require 'el-get nil 'noerror)
@@ -36,11 +48,14 @@
               (concat user-emacs-directory "config/el-get/local-recipes")))
 
 
-;;------------------------------------------------------------------------------
-;; @ package のインストール
+;; ------------------------------------------------------------------------------
+;;; package のインストール
+;; ------------------------------------------------------------------------------
 
-;; http://shibayu36.hatenablog.com/entry/2013/04/30/175740
 ;; Packages to install from MELPA
+;; @see http://shibayu36.hatenablog.com/entry/2013/04/30/175740
+
+
 (defvar my/packages
   '(
     auto-complete
