@@ -5,10 +5,17 @@
   ;; package.elでelispを入れるdirectoryの設定
   (setq package-user-dir "~/.emacs.d/elpa")
 
-  ;; パッケージリポジトリにMarmaladeを追加
-  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+  ;; パッケージリポジトリを追加
+
+  ;; marmaladeではなく melpa-stable を利用する
+  ;; @see http://d.hatena.ne.jp/syohex/20141011/1412996912
+  ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+  (add-to-list 'package-archives '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))  
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-  (add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/"))
+  ;; tromey.com はメンテナンスされていなさそうなので設定不要
+  ;; @see http://st63jun.hatenablog.jp/entry/2012/10/22/141737
+  ;;(add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/"))
+
   ;; インストールしたパッケージにロードパスを通してロードする
   (package-initialize)
 )
