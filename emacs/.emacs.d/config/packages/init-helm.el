@@ -14,8 +14,8 @@
 
   ;; (when (require 'helm-migemo nil t)
   ;;   (setq helm-use-migemo t))
-  (when (require 'helm-git nil t)
-    (global-set-key (kbd "C-x C-g") 'helm-git-find-files)
-    )
+  ;; (when (require 'helm-git nil t)
+  ;;   (global-set-key (kbd "C-x C-g") 'helm-git-find-files)
+  ;;   )
   )
 
