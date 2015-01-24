@@ -1,0 +1,4 @@
+(:name fuzzy
+       :description "Fuzzy matching utilities for GNU Emacs"
+       :type github
+       :pkgname "auto-complete/fuzzy-el")
