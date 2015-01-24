@@ -1,0 +1,6 @@
+(:name yatex
+       :website "http://www.yatex.org/"
+       :description "Yet Another TeX mode for Emacs"
+       :type hg
+       :url "http://www.yatex.org/hgrepos/yatex"
+)

@@ -1,0 +1,8 @@
+(:name sdic
+       :type http-tar
+       :options ("xzf")
+       :load-path ("lisp")
+       :build ("./configure" "make autoloads" "make")
+       :build/darwin ("./configure --with-emacs=/Applications/Emacs.app/Contents/MacOS/Emacs" "make")
+       :url "http://www.namazu.org/~tsuchiya/sdic/sdic-2.1.3.tar.gz"
+       )

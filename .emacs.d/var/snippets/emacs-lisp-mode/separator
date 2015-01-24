@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: separator for emacs init file.
+# key: sep
+# binding: direct-keybinding
+# --
+;;; -------------------------------------------------------------------
+;;;; $0
+;;; -------------------------------------------------------------------

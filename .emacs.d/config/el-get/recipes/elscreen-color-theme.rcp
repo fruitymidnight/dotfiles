@@ -1,0 +1,8 @@
+(:name elscreen-color-theme
+       :description "Elscreen Add-on for color-theme"
+       :type http-tar
+       :depends elscreen
+       :options ("xzf")
+       :url "ftp://ftp.morishima.net/pub/morishima.net/naoto/ElScreen/elscreen-color-theme-0.0.0.tar.gz"
+       )
+
