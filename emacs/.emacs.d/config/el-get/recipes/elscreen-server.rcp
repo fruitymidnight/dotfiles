@@ -1,8 +1,0 @@
-(:name elscreen-server
-       :description "Elscreen Add-on for emacs server"
-       :type http-tar
-       :depends elscreen
-       :options ("xzf")
-       :url "ftp://ftp.morishima.net/pub/morishima.net/naoto/ElScreen/elscreen-server-0.2.0.tar.gz"
-       )
-

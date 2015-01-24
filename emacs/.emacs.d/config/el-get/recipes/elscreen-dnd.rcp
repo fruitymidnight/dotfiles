@@ -1,8 +1,0 @@
-(:name elscreen-dnd
-       :description "Elscreen Add-on for Drag and Drop"
-       :type http-tar
-       :depends elscreen
-       :options ("xzf")
-       :url "ftp://ftp.morishima.net/pub/morishima.net/naoto/ElScreen/elscreen-dnd-0.0.0.tar.gz"
-       )
-

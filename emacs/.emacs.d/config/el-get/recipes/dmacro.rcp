@@ -1,5 +1,0 @@
-(:name dmacro
-       :description "Key macro"
-       :type http
-       :url "http://www.pitecan.com/DynamicMacro/dmacro.el")
-
