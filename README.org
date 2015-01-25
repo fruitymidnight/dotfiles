@@ -1,3 +1,15 @@
+* Install
+** dotemacs
+Emacs の設定ファイルは別リポジトリで管理する。
+管理が煩雑であるため、subtree として読み込む。
+#+BEGIN_EXAMPLE
+# リモートリポジトリの追加
+% git remote add -f dotemacs https://fruitymidnight@github.com/fruitymidnight/dotemacs.git 
+# subtree として追加
+% git subtree add --prefix=emacs/ --squash dotemacs master
+#+END_EXAMPLE
+
+
 * 見出し１
 ** 見出し２
 *** 見出し３
