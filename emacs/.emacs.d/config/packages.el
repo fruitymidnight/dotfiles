@@ -112,7 +112,7 @@
     dmacro
     cp5022x
     setup-cygwin
-    yatex
+;;    yatex
     )
   "A list of packages to install from el-get at launch.")
 
@@ -142,6 +142,6 @@
 (load "config/packages/init-migemo" nil t)
 (load "config/packages/init-popwin" nil t)
 (load "config/packages/init-yasnippet" nil t)
-(load "config/packages/init-yatex" nil t)
+;; (load "config/packages/init-yatex" nil t)
 (load "config/packages/init-git-gutter-fringe" nil t)
 
