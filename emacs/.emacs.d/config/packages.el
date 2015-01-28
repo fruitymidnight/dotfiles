@@ -11,7 +11,10 @@
 ;;;    - 1. M-x el-get-self-update
 
 
-;; @ package.el の設定
+;;; -------------------------------------------------------------------
+;;;; package.el の設定
+;;; -------------------------------------------------------------------
+
 (when (require 'package nil t)
   ;; package.elでelispを入れるdirectoryの設定
   (setq package-user-dir "~/.emacs.d/elpa")
@@ -31,10 +34,9 @@
   (package-initialize)
 )
 
-
-;; ------------------------------------------------------------------------------
-;;; el-get.el の設定
-;; ------------------------------------------------------------------------------
+;;; -------------------------------------------------------------------
+;;;; el-get.el の設定
+;;; -------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
 (unless (require 'el-get nil 'noerror)
@@ -55,9 +57,9 @@
               (concat user-emacs-directory "config/el-get/local-recipes")))
 
 
-;; ------------------------------------------------------------------------------
-;;; package のインストール
-;; ------------------------------------------------------------------------------
+;;; -------------------------------------------------------------------
+;;;; package のインストール
+;;; -------------------------------------------------------------------
 
 ;; Packages to install from MELPA
 ;; @see http://shibayu36.hatenablog.com/entry/2013/04/30/175740
@@ -88,11 +90,12 @@
 ;;    elscreen-server
 ;;    elscreen-color-theme
 ;;    elscreen-color-dnd
-    auto-async-byte-compile
+;;    auto-async-byte-compile
     tabbar
     color-moccur
 ;;    cygwin-mount
     git-gutter-fringe
+    use-package
     )
   "A list of packages to install from MELPA at launch.")
 
@@ -118,6 +121,14 @@
 
 (el-get 'sync my/el-get-packages)
 
+;;; -------------------------------------------------------------------
+;;;; use-package
+;;; -------------------------------------------------------------------
+
+;; use-package が存在しない場合、何もしない use-package マクロを定義
+(unless (require 'use-package nil t)
+  (defmacro use-package (&rest args)))
+
 ;;------------------------------------------------------------------------------
 ;; @ インストールしたelispの設定
 
@@ -136,7 +147,7 @@
 (load "config/packages/init-sdic" nil t)
 (load "config/packages/init-texttranslator" nil t)
 (load "config/packages/init-cp5022x" nil t)
-(load "config/packages/init-auto-async-byte-complile" nil t)
+;; (load "config/packages/init-auto-async-byte-complile" nil t)
 ;; (load "config/packages/init-elscreen" nil t)
 (load "config/packages/init-tabbar" nil t)
 (load "config/packages/init-migemo" nil t)
@@ -144,4 +155,6 @@
 (load "config/packages/init-yasnippet" nil t)
 ;; (load "config/packages/init-yatex" nil t)
 (load "config/packages/init-git-gutter-fringe" nil t)
+(load "config/packages/init-web" nil t)
+
 

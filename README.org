@@ -1,12 +1,24 @@
 * Install
-** dotemacs
-Emacs の設定ファイルは別リポジトリで管理する。
+** Emacs設定ファイルの追加方法
+Emacs の設定ファイルは[[https://github.com/fruitymidnight/dotemacs][別リポジトリ]] で管理する。
 管理が煩雑であるため、subtree として読み込む。
 #+BEGIN_EXAMPLE
 # リモートリポジトリの追加
 % git remote add -f dotemacs https://fruitymidnight@github.com/fruitymidnight/dotemacs.git 
+
 # subtree として追加
 % git subtree add --prefix=emacs/ --squash dotemacs master
+
+
+# ファイルの修正
+% git add emacs/.emacs.d/init.el
+% git commit -m "edit"
+
+# 変更をサブツリーにpush
+% git subtree push  --prefix=emacs dotemacs master
+
+# サブツリーの側から変更した場合はpullして親レポジトリに変更を反映
+% git subtree pull --prefix=emacs dotemacs master
 #+END_EXAMPLE
 
 
