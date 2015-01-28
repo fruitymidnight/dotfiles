@@ -139,7 +139,7 @@
 (load "config/packages/init-c" nil t)
 (load "config/packages/init-lua" nil t)
 (load "config/packages/init-markdown" nil t)
-;; (load "config/packages/init-org" nil t)
+(load "config/packages/init-org" nil t)
 ;; (load "config/packages/init-calfw" nil t)
 (load "config/packages/init-session" nil t)
 (load "config/packages/init-srspeedbar" nil t)
