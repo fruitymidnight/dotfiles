@@ -2,6 +2,42 @@
 ;;------------------------------------------------------------------------------
 ;; @ org mode の設定
 
+(setq org-latex-pdf-process '("/usr/texbin/ptex2pdf -l -ot '-synctex=1' %f"))
+(setq org-latex-default-class "jsarticle")
+(setq org-latex-classes '(("jsarticle"
+            "\\documentclass{jsarticle}
+\\usepackage[dvipdfmx]{graphicx}
+\\usepackage{url}
+\\usepackage{atbegshi}
+\\AtBeginShipoutFirst{\\special{pdf:tounicode EUC-UCS2}}
+\\usepackage[dvipdfmx,setpagesize=false]{hyperref}
+ [NO-DEFAULT-PACKAGES]
+ [PACKAGES]
+ [EXTRA]"
+            ("\\section{%s}" . "\\section*{%s}")
+            ("\\subsection{%s}" . "\\subsection*{%s}")
+            ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+            ("\\paragraph{%s}" . "\\paragraph*{%s}")
+            ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
+               ("jsbook"
+            "\\documentclass{jsbook}
+\\usepackage[dvipdfmx]{graphicx}
+\\usepackage{url}
+\\usepackage{atbegshi}
+\\AtBeginShipoutFirst{\\special{pdf:tounicode EUC-UCS2}}
+\\usepackage[dvipdfmx,setpagesize=false]{hyperref}
+ [NO-DEFAULT-PACKAGES]
+ [PACKAGES]
+ [EXTRA]"
+            ("\\chapter{%s}" . "\\chapter*{%s}")
+            ("\\section{%s}" . "\\section*{%s}")
+            ("\\subsection{%s}" . "\\subsection*{%s}")
+            ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+            ("\\paragraph{%s}" . "\\paragraph*{%s}")
+            ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
+               ))
+
+
 (add-to-list 'auto-mode-alist '(".org$" . org-mode))
 
 ;; キー設定
