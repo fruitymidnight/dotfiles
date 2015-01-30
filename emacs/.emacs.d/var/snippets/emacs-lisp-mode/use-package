@@ -4,7 +4,16 @@
 # binding: direct-keybinding
 # --
 (use-package foo
+  :ensure t
+  :defer t
+  :bind (("C-c y" . hoge))
   :init
   (progn
     (setq foo-variable t)
-    (foo-mode 1)))
+    (foo-mode 1)
+    )
+  :config
+  (progn
+    (setq foo-variable t)
+    (foo-mode 1))
+    )

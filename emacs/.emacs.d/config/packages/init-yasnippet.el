@@ -13,20 +13,21 @@
 ;;;; Yasnippet
 ;;; -------------------------------------------------------------------
 
-
-
-
-(when (locate-library "helm-c-yasnippet")
-  (require 'helm-c-yasnippet)
-  (global-set-key (kbd "C-c y") 'helm-c-yas-complete)
+(use-package helm-c-yasnippet
+  :ensure t
+  :defer t
+  :bind (("C-c y" . helm-c-yas-complete))
   )
 
-(lazyload (helm-c-yas-complete) "yasnippet"          
-          (setq yas-snippet-dirs
-                '(
-                  "~/.emacs.d/var/snippets"                        ; personal snippets
-                  yas-installed-snippets-dir                       ; default collection
-                  ))
-          (yas-global-mode 1)
-          )
-
+(use-package yasnippet
+  :ensure t
+  :defer t
+  :config
+  (progn
+    (setq yas-snippet-dirs
+          '(
+            "~/.emacs.d/var/snippets"                        ; personal snippets
+            yas-installed-snippets-dir                       ; default collection
+            ))
+    (yas-global-mode 1)
+    ))
