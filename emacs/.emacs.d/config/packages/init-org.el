@@ -31,7 +31,7 @@
     ;; latex に変換するときのデフォルト値
     (setq org-latex-default-class "jsarticle")
     (setq org-latex-classes '(("jsarticle"
-                               "\\documentclass[uplatex]{jsarticle}
+                               "\\documentclass[uplatex,9pt]{jsarticle}
 \\usepackage[dvipdfmx]{graphicx}
 \\usepackage{url}
 \\usepackage{atbegshi}
@@ -62,9 +62,7 @@
                                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                                ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
-                              ))
-    
-    
+                              ))    
 
 
   ))
