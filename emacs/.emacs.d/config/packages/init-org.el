@@ -58,10 +58,6 @@
          ("C-c a" . org-agenda)
          ("C-c m" . org-capture)
          )
-  :init
-  (progn
-
-    )
   :config
   (progn
     ;; ディレクトリの設定
@@ -72,7 +68,6 @@
 
 (use-package ox-latex
   :defer t
-
   :config
   (progn
     ;; pdf に変換するときのコマンドを定義
@@ -101,22 +96,6 @@
                                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                                ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
-                              ("jsbook"
-                               "\\documentclass[uplatex]{jsbook}
-\\usepackage[dvipdfmx]{graphicx}
-\\usepackage{url}
-\\usepackage{atbegshi}
-\\AtBeginShipoutFirst{\\special{pdf:tounicode EUC-UCS2}}
-\\usepackage[dvipdfmx,setpagesize=false]{hyperref}
- [NO-DEFAULT-PACKAGES]
- [PACKAGES]
- [EXTRA]"
-                               ("\\chapter{%s}" . "\\chapter*{%s}")
-                               ("\\section{%s}" . "\\section*{%s}")
-                               ("\\subsection{%s}" . "\\subsection*{%s}")
-                               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-                               ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                               ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
                               ))
     ;; #+BEGIN_SRC に listing を利用する
     (setq org-latex-listings t)
@@ -133,4 +112,5 @@
       ("breaklines" "true")                            ; 途中の改行を許可する
       ("lineskip" "-0.5zw")                            ; 行間をデフォルトの半分にする
       ))
-)
+    )
+  )
