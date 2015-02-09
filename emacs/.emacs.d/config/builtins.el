@@ -95,36 +95,6 @@
                     :underline nil)
 
 
-;; ----------------------------------------------------------------------
-;; @ grep
-
-(when windows-p
-  ;; shell-quote-argumentの問題回避 
-  (defvar quote-argument-for-windows-p t "enables `shell-quote-argument' workaround for windows.") 
-  (defadvice shell-quote-argument (around shell-quote-argument-for-win activate) 
-    "workaround for windows." 
-    (if quote-argument-for-windows-p 
-        (let ((argument (ad-get-arg 0))) 
-          (setq argument (replace-regexp-in-string "\\\\" "\\\\" argument nil t)) 
-          (setq argument (replace-regexp-in-string "'" "'\\''" argument nil t)) 
-          (setq ad-return-value (concat "'" argument "'"))) 
-      ad-do-it)) 
-
-  ;; lgrep で utf-8 を使うように設定 
-  (setq grep-host-defaults-alist nil) ;; これはおまじないだと思ってください 
-  (setq grep-use-null-device nil)
-  (setq grep-command "lgrep -Du8 -Ku8 -Ou8 -n '' {*,.*}")
-  (setq grep-template "lgrep -Du8 -Ku8 -Ou8 <C> -n <R> <F> <N>") 
-  (setq grep-find-template "find . <X> -type f <F> -print0 | xargs -0 -e lgrep -Du8 -Ku8 -Ou8 <C> -n <R> <N>") 
-  
-  ;; http://d.hatena.ne.jp/whitypig/20111216/1324024458
-  ;; (defadvice compilation-start (around compilation-start-message-coding-ad activate)
-  ;;   (let ((coding-system-for-read 'utf-8)
-  ;;         (coding-system-for-write 'sjis-dos))
-  ;;     ad-do-it))
-)
-
-
 
 ;; ----------------------------------------------------------------------
 ;; @ auto-insert
