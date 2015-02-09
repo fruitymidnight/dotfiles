@@ -97,20 +97,6 @@
 
 
 ;; ----------------------------------------------------------------------
-;; @ auto-insert
-
-(lazyload (auto-insert) "autoinsert"
-(setq auto-insert-directory "~/.emacs.d/var/insert/")
-  (setq auto-insert-alist
-      (append '(
-                (yatex-mode . "latex-insert.tex")
-                ) auto-insert-alist))
-)
-(add-hook 'find-file-hooks 'auto-insert)
-
-
-
-;; ----------------------------------------------------------------------
 ;; @ linum
 ;; http://d.hatena.ne.jp/kitokitoki/20100714/p1
 
