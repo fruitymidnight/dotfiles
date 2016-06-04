@@ -129,6 +129,19 @@
 (unless (require 'use-package nil t)
   (defmacro use-package (&rest args)))
 
+
+;;; -------------------------------------------------------------------
+;;;; exec-path-from-shell
+;;; -------------------------------------------------------------------
+
+(use-package exec-path-from-shell
+  :ensure t  
+  :config
+  (progn
+    (exec-path-from-shell-initialize)
+  )
+)
+
 ;;------------------------------------------------------------------------------
 ;; @ インストールしたelispの設定
 

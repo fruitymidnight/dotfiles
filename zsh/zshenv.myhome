@@ -3,6 +3,8 @@
 #Path
 export PATH="/usr/texbin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 
-#python
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages/
-export PATH="$HOME/.rbenv/bin:$PATH"
+# adb
+export PATH="$PATH:/Applications/Android/android-sdk/platform-tools"
+
+# Android
+export ANDROID_HOME='/Applications/Android/android-sdk'
