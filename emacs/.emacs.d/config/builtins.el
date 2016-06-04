@@ -1,14 +1,24 @@
-; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
-;; ----------------------------------------------------------------------
-;; @ 組込みelispの設定
+;;; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
+;;; builtins.el --- 組込みelispの設定
 
-;; ----------------------------------------------------------------------
-;; @ Apache などの設定ファイルに色をつける
+;;; Commentary:
+
+;; 
+
+;;; Code:
+
+
+;;; -------------------------------------------------------------------
+;;;; Apache などの設定ファイルに色をつける
+;;; -------------------------------------------------------------------
+
 
 (require 'generic-x)
 
-;; ----------------------------------------------------------------------
-;; @ Diff
+
+;;; -------------------------------------------------------------------
+;;;; Diff
+;;; -------------------------------------------------------------------
 
 ;; diffの表示方法を変更
 (defun diff-mode-setup-faces ()
@@ -30,8 +40,10 @@
 (add-hook 'diff-mode-hook 'diff-mode-refine-automatically)
 
 
-;; ----------------------------------------------------------------------
-;; @ cua-mode
+
+;;; -------------------------------------------------------------------
+;;;; cua-mode
+;;; -------------------------------------------------------------------
 
 ;; リージョン選択中に C-<enter> で矩形選択モードになります。 
 ;; sense-regionと同様に C-w や M-w が使えます。また、矩形選択中に次のコマンドを打つと、矩形領域に対して操作を行うことができます。
@@ -47,15 +59,10 @@
 (cua-mode t)
 (setq cua-enable-cua-keys nil) ; そのままだと C-x が切り取りになってしまったりするので無効化
 
-;; ----------------------------------------------------------------------
-;; @ recentf
 
-(setq recentf-max-saved-items 500)
-(recentf-mode 1)
-
-
-;; ----------------------------------------------------------------------
-;; @ isswitch （anything で代替可）
+;;; -------------------------------------------------------------------
+;;;; isswitch （anything で代替可）
+;;; -------------------------------------------------------------------
 
 ;;; iswitchb は、バッファ名の一部の文字を入力することで、
 ;;; 選択バッファの絞り込みを行う機能を実現します。
@@ -70,18 +77,22 @@
         ;; (define-key iswitchb-mode-map "\C-b" 'iswitchb-prev-match)))
 
 
-;; ----------------------------------------------------------------------
-;; @ emacsclient
+;;; -------------------------------------------------------------------
+;;;; emacsclient
+;;; -------------------------------------------------------------------
 
 (require 'server)
 (unless (server-running-p)
   (server-start))
 
-;; ----------------------------------------------------------------------
-;; @ whitespace
+
+;;; -------------------------------------------------------------------
+;;;; whitespace
+;;; -------------------------------------------------------------------
 
 ;; Tab や 全角スペースを可視化
 ;; emacs23 より標準の elisp 
+
 (require 'whitespace)
 (global-whitespace-mode 1)
 (setq whitespace-style
@@ -101,54 +112,13 @@
                     :underline nil)
 
 
-;; ----------------------------------------------------------------------
-;; @ grep
-
-(when windows-p
-  ;; shell-quote-argumentの問題回避 
-  (defvar quote-argument-for-windows-p t "enables `shell-quote-argument' workaround for windows.") 
-  (defadvice shell-quote-argument (around shell-quote-argument-for-win activate) 
-    "workaround for windows." 
-    (if quote-argument-for-windows-p 
-        (let ((argument (ad-get-arg 0))) 
-          (setq argument (replace-regexp-in-string "\\\\" "\\\\" argument nil t)) 
-          (setq argument (replace-regexp-in-string "'" "'\\''" argument nil t)) 
-          (setq ad-return-value (concat "'" argument "'"))) 
-      ad-do-it)) 
-
-  ;; lgrep で utf-8 を使うように設定 
-  (setq grep-host-defaults-alist nil) ;; これはおまじないだと思ってください 
-  (setq grep-use-null-device nil)
-  (setq grep-command "lgrep -Du8 -Ku8 -Ou8 -n '' {*,.*}")
-  (setq grep-template "lgrep -Du8 -Ku8 -Ou8 <C> -n <R> <F> <N>") 
-  (setq grep-find-template "find . <X> -type f <F> -print0 | xargs -0 -e lgrep -Du8 -Ku8 -Ou8 <C> -n <R> <N>") 
-  
-  ;; http://d.hatena.ne.jp/whitypig/20111216/1324024458
-  ;; (defadvice compilation-start (around compilation-start-message-coding-ad activate)
-  ;;   (let ((coding-system-for-read 'utf-8)
-  ;;         (coding-system-for-write 'sjis-dos))
-  ;;     ad-do-it))
-)
 
 
+;;; -------------------------------------------------------------------
+;;;; linum
+;;; -------------------------------------------------------------------
 
-;; ----------------------------------------------------------------------
-;; @ auto-insert
-
-(lazyload (auto-insert) "autoinsert"
-(setq auto-insert-directory "~/.emacs.d/var/insert/")
-  (setq auto-insert-alist
-      (append '(
-                (yatex-mode . "latex-insert.tex")
-                ) auto-insert-alist))
-)
-(add-hook 'find-file-hooks 'auto-insert)
-
-
-
-;; ----------------------------------------------------------------------
-;; @ linum
-;; http://d.hatena.ne.jp/kitokitoki/20100714/p1
+;; @see http://d.hatena.ne.jp/kitokitoki/20100714/p1
 
 ;; メジャーモード/マイナーモードでの指定
 (setq my-linum-hook-name '(emacs-lisp-mode-hook slime-mode-hook sh-mode-hook
